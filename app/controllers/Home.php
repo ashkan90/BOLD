@@ -9,14 +9,6 @@ class Home extends Controller
 	}
 
 	public function indexAction(){
-		$db = DB::getInstance();
-		$contact = $db->findFirst('contatcs', [
-			'conditions' => 'address = ?',
-			'bind' => ['deneme'],
-			'order' => "email",
-			'limit' => 1
-		]);
-		dd($contact);
 		$this->view->render('home/index');
 	}
 	
